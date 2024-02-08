@@ -1,0 +1,14 @@
+########################################
+## DB-Demo-2 (c) 2024/02/07 Jan Klimo ##
+########################################
+
+namePrefix: prod-
+commonLabels:
+  variant: production
+commonAnnotations:
+  note: This is Prod deployment
+resources:
+- ../../base
+patchesStrategicMerge:
+- replica_count.yaml
+- job.yaml

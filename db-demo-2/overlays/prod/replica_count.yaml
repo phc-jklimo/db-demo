@@ -1,0 +1,10 @@
+########################################
+## DB-Demo-2 (c) 2024/02/07 Jan Klimo ##
+########################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-demo-2
+spec:
+  replicas: 3

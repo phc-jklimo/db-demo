@@ -1,0 +1,25 @@
+########################################
+## DB-Demo-2 (c) 2024/02/07 Jan Klimo ##
+########################################
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nginx-cron-job  
+spec:
+  schedule: "* * * * *" # runs every minute
+  concurrencyPolicy: Allow
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: curl 
+            image: curlimages/curl:7.72.0
+            args:
+            - /bin/sh
+            - -ec
+            - "curl -v \"http://nginx-demo-2-lb:80\""
+          restartPolicy: OnFailure

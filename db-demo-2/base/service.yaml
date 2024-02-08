@@ -1,0 +1,16 @@
+########################################
+## DB-Demo-2 (c) 2024/02/07 Jan Klimo ##
+########################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-demo-2-lb
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

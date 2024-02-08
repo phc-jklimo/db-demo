@@ -1,0 +1,14 @@
+########################################
+## DB-Demo-2 (c) 2024/02/07 Jan Klimo ##
+########################################
+
+namePrefix: dev-
+commonLabels:
+  variant: development
+commonAnnotations:
+  note: This is Dev deployment
+resources:
+- ../../base
+patchesStrategicMerge:
+- replica_count.yaml
+- job.yaml
